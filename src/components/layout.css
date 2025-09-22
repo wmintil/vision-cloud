@@ -42,6 +42,13 @@ body {
   font-weight: normal;
   margin: 0;
   word-wrap: break-word;
+
+    background-image: url('../../public/static/test2.jpg');
+
+    background-size:     cover; 
+    /* //cover   contain    */
+    background-repeat:   no-repeat;
+    background-position: center top; 
 }
 a {
   background-color: transparent;
@@ -130,7 +137,7 @@ ul,
 ol {
   margin-left: var(--space-4);
   list-style-position: outside;
-  list-style-image: none;
+  list-style-image: none !important;
 }
 pre {
   margin-left: 0;
@@ -221,4 +228,41 @@ pre code:after,
 pre tt:before,
 pre tt:after {
   content: none;
+}
+
+.countdown {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+    /* display: flex;
+  justify-content: space-around; */
+  font-family:  'RedHat';
+  text-align: center;
+  padding-top: 40px;
+  margin-left: -30px;
+}
+
+.clocknumber{
+  font-family:  'RedHat';
+  font-weight: bolder;
+}
+
+.time {
+  font-size: 40px;
+}
+/* Styles for mobile devices */
+@media (max-width: 576px) {
+  body {
+      background-size: 800px 980px;
+  }
+  .countdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-family:  'RedHat';
+    text-align: center;
+    padding-top: 40px;
+    margin-left: -20px;
+    width: 5em;
+  }
 }

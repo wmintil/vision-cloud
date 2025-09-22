@@ -11,10 +11,15 @@
   );
   margin-bottom: var(--size-gap);
   margin-top: var(--size-gap);
+  list-style-type: none;
 }
 
 .listItem {
-  margin: 0;
+  position: absolute;
+  margin-left: -180px;
+  font-size: 30px;
+  font-weight: 900;
+  margin-top: -20px;
 }
 
 .listItem::marker {
@@ -51,4 +56,21 @@
 .intro {
   max-width: none;
   line-height: var(--line-height-loose);
+}
+
+/* Styles for mobile devices */
+@media (max-width: 576px) {
+  .listItem {
+    position: absolute;
+    margin-left: -10px;
+    font-size: 30px;
+    font-weight: 900;
+    margin-top: -20px;
+  }
+}
+
+@media (max-width: 850px) {
+  .listItem {
+    margin-left: -10px;
+  }
 }
