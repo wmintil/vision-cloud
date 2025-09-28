@@ -31,7 +31,7 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "predeploy":"npm run build",
+    "predeploy": "npm run build",
     "deploy": "gatsby build && gh-pages -d public -b gh-pages",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
@@ -41,5 +41,8 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "resolutions": {
+    "graphql": "^15.0.0"
   }
 }
