@@ -8,6 +8,7 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  pathPrefix: "/vision-cloud",
   siteMetadata: {
     title: `Vision Cloud - Next Gen Integrator`,
     description: `Vision Cloud- Next Gen Integrator website.`,
