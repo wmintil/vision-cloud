@@ -43,12 +43,15 @@ body {
   margin: 0;
   word-wrap: break-word;
 
-    background-image: url('/test2.jpg');
+  background-image: url('./images/test2.jpg');
+  background-image: url('./images/test2.jpg');
+  background-image: url('/test2.jpg');
+  background-image: url('test2.jpg');
 
-    background-size:     cover; 
-    /* //cover   contain    */
-    background-repeat:   no-repeat;
-    background-position: center top; 
+  background-size:     cover; 
+  /* //cover   contain    */
+  background-repeat:   no-repeat;
+  background-position: center top; 
 }
 a {
   background-color: transparent;
