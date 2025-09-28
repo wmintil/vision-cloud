@@ -32,7 +32,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "predeploy":"npm run build",
-    "deploy": "gatsby build && echo 'wmintil.github.io/vision-cloud' > public/CNAME && gh-pages -d public -b main",
+    "deploy": "gatsby build && gh-pages -d public -b gh-pages",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {
