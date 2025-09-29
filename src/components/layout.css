@@ -43,10 +43,10 @@ body {
   margin: 0;
   word-wrap: break-word;
 
-  background-image: url('./images/test2.jpg');
-  background-image: url('./images/test2.jpg');
+  /* background-image: url('./images/test2.jpg');
+  background-image: url('./images/test2.jpg'); */
   background-image: url('/test2.jpg');
-  background-image: url('test2.jpg');
+  /* background-image: url('test2.jpg'); */
 
   background-size:     cover; 
   /* //cover   contain    */
