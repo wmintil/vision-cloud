@@ -2,7 +2,7 @@
   "name": "vision-cloud",
   "private": true,
   "description": "Vision cloud in Gatsby",
-  "homepage": "wmintil.github.io/vision-cloud/",
+  "homepage": "/vision-cloud.eu",
   "version": "0.1.0",
   "author": "Wilson Mintilana <wilson.mintilana@gmail.com>",
   "dependencies": {
@@ -32,7 +32,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "predeploy": "npm run build",
-    "deploy": "gatsby build && gh-pages -d public -b testdeploy2",
+    "deploy": "gatsby build && echo 'vision-cloud.eu' > public/CNAME ",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {
