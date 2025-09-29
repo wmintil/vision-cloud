@@ -12,7 +12,11 @@ const links = [
     text: "Tutorial",
     url: "https://www.gatsbyjs.com/docs/tutorial",
     description:
-      "Notre site est actuellement en maintenance. Nous revenons très vite, merci de votre patience.",
+      "Bientôt en ligne.",
+      description1:
+      " Nous finalisons notre nouveau site pour mieux vous présenter nos services et vous offrir plus de simplicité.",
+      description2:
+      "Patience, l’attente en vaut la peine!",
   },
 ]
 
@@ -182,7 +186,11 @@ const IndexPage = () => (
           >
             {link.text}
           </a> */}
-          <p className={styles.listItemDescription}>{link.description}</p>
+          <div className={styles.listItemDescription}>
+            <p>{link.description}</p>
+            <p>{link.description1}</p>
+            <p>{link.description2}</p>
+          </div>
         </li>
       ))}
     </ul>
