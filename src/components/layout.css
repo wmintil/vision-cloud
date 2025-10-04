@@ -43,10 +43,8 @@ body {
   margin: 0;
   word-wrap: break-word;
 
-  /* background-image: url('./images/test2.jpg');
-  background-image: url('./images/test2.jpg'); */
-  background-image: url('/test2.jpg');
-  /* background-image: url('test2.jpg'); */
+
+  /* background-image: url('/test2.jpg'); */
 
   background-size:     cover; 
   /* //cover   contain    */
@@ -254,6 +252,50 @@ pre tt:after {
 .time {
   font-size: 40px;
 }
+.main-hero{
+  margin: 5px 0;
+  padding: 10px 0;
+}
+.carousel{
+  margin: 20px;
+  padding: 30px;
+}
+.team,
+.mission,
+.studies{
+  margin: 15px 0;
+}
+.navHeader{
+  background-color: #fff3d9;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.team-member{
+  margin: 30px 3px;
+  display:  flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.team-member-bio{
+  display:  flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.title{
+  font-weight:bold;
+}
+.sub-title{
+  font-weight:bold;
+  padding-left: 35px;
+}
+.team_description{
+  padding: 10px 0 0 30px;
+  margin: 10px;
+  text-align: justify;
+}
+
 /* Styles for mobile devices */
 @media (max-width: 576px) {
   body {

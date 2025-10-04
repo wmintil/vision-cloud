@@ -60,6 +60,13 @@
   max-width: none;
   line-height: var(--line-height-loose);
 }
+.team{
+  margin-top: 10px;
+  border-radius: 300px;
+  width: 200px;
+  height: 200px;
+   box-shadow: 0 4px 28px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 /* Styles for mobile devices */
 @media (max-width: 576px) {
