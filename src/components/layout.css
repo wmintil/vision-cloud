@@ -253,8 +253,17 @@ pre tt:after {
   font-size: 40px;
 }
 .main-hero{
-  margin: 5px 0;
-  padding: 10px 10px;
+  margin: 15px 0;
+  padding: 30px 20px;
+}
+.hero-description{
+    margin-left: 10%;
+    margin-right: auto;
+    text-align: justify;
+}
+.hero-img{
+  opacity: 60%;
+  border-radius: 10%
 }
 .carousel{
   margin: 20px;
@@ -312,7 +321,7 @@ pre tt:after {
   padding: 10px 0 0 30px;
   margin: 10px;
   text-align: justify;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 .slick-dots li button::before {
   font-size: 25px !important;
@@ -325,6 +334,13 @@ li.slick-active > button{
 }
 .slick-dots li button:hover::before{
   color: #ec7461 !important;
+}
+.studies{
+  /* background-image: url('../images/meeting.jpg');
+  background-size: contain; 
+  background-position: center right; 
+  background-repeat:   no-repeat; */
+  /* opacity: 0.6; */
 }
 
 .mobilenav--bars,
@@ -348,6 +364,13 @@ li.slick-active > button{
     margin-left: -20px;
     width: 5em;
   }
+
+  .main-hero,
+  .hero-description{
+  margin: 10px;
+  padding: 10px 10px;
+  }
+  
   .mobilenav--bars,
   .mobilenav{
     visibility:visible;

@@ -207,8 +207,6 @@ const IndexPage = () =>{
           <FontAwesomeIcon icon={faBars} size="3x" style={{ color: '#ec7461' }} />
         </a>
         </div>
-      {/* <div class="topnav">
-        <a href="#home" class="active">Logo</a> */}
       </div>
       {isVisible &&
       <div className="mobilenav" id="myLinks">
@@ -220,12 +218,13 @@ const IndexPage = () =>{
 
       <div className="main-hero">
         {Intro.map(link => (
-              <div key={link.url} className={styles.intro}>
-                <div className={styles.description}>
+              <div key={link.url} className="intro">
+                <div className="hero-description">
                   <ReactMarkdown>{link.description}</ReactMarkdown>
                 </div>
               </div>
             ))}
+        <StaticImage key="xi" alt="image of intro"  src="../images/sunrise.jpg" class="hero-img"/>
       </div>
     
     <div className="carousel">
