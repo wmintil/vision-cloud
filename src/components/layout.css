@@ -355,7 +355,11 @@ footer,
 .footer{
   background-color: #000;
   color: white;
-  padding-top: 10px
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-around;
 }
 
 /* Styles for mobile devices */
