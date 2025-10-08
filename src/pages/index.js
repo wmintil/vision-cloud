@@ -134,7 +134,7 @@ const contactUrl = [
 const contactForm = [
   {
     url: "cf",
-    title: "Contact",
+    title: "Contact us:",
     nameField : "Name",
     emailField: "Enter email",
     textField: "Enter your text"
@@ -274,8 +274,9 @@ const IndexPage = () =>{
           ))}
     </div>
 
+  <div className="footer">
     <div className="form">
-      <div className="title">Contact</div>
+      <div className="title">Contact us:</div>
       <form action="https://getform.io/f/amdyxnpb"
         method="POST"
         enctype="multipart/form-data"
@@ -284,11 +285,17 @@ const IndexPage = () =>{
         <input
           type="email"
           name="email"
-          placeholder="Enter email"
+          placeholder="Please enter email"
+          required
+        ></input>
+        <input
+          type="subject"
+          name="subject"
+          placeholder="Please enter subject"
           required
         ></input>
         <textarea
-          placeholder="Enter message"
+          placeholder="Your message...."
           name="message"
           rows="5"
           required
@@ -296,6 +303,7 @@ const IndexPage = () =>{
         <button type="submit">Send</button>
       </form>
     </div>
+  </div>
   </Layout>
 )
 }
