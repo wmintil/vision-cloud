@@ -254,7 +254,7 @@ pre tt:after {
 }
 .main-hero{
   margin: 5px 0;
-  padding: 10px 0;
+  padding: 10px 10px;
 }
 .carousel{
   margin: 20px;
@@ -269,6 +269,9 @@ pre tt:after {
   background-color: #fff3d9;
   padding-top: 10px;
   padding-left: 10px;
+      display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .team-member{
@@ -285,15 +288,49 @@ pre tt:after {
 }
 .title{
   font-weight:bold;
+  margin-bottom: 10px;
+  margin-left: 20px;
 }
+.slide-title,
 .sub-title{
   font-weight:bold;
   padding-left: 35px;
+}
+.slide{
+  display: flex;
+  flex-direction: column;
+}
+.slide-title{
+  margin-bottom: 10px;
+  align-self: flex-end;
+}
+.slide-text{
+  text-align: justify;
+  margin-bottom: 10px;
 }
 .team_description{
   padding: 10px 0 0 30px;
   margin: 10px;
   text-align: justify;
+  overflow-y: scroll;
+}
+.slick-dots li button::before {
+  font-size: 25px !important;
+  line-height: 30px;
+}
+.slick-dots li button:hover,
+.slick-dots li.slick-active button::before,
+li.slick-active > button{
+  color: #ec7461 !important;
+}
+.slick-dots li button:hover::before{
+  color: #ec7461 !important;
+}
+
+.mobilenav--bars,
+.mobilenav{
+  display: none;
+  visibility: hidden;
 }
 
 /* Styles for mobile devices */
@@ -310,5 +347,34 @@ pre tt:after {
     padding-top: 40px;
     margin-left: -20px;
     width: 5em;
+  }
+  .mobilenav--bars,
+  .mobilenav{
+    visibility:visible;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;    
+  }
+  .mobilenav{
+    padding: 0 20px 5px;
+      background-color: #fff3d9;
+  }
+  .team-member{
+    flex-direction: column;
+  }
+  .team_description{
+    padding: 0 10px;
+  }
+  .picture{ 
+      padding-left: 40% !important;
+      margin-bottom: 10px;
+  }
+  form{
+  margin-left: 10%;
+  }
+  .studies,
+  .mission{
+    padding: 0 20px;
+      text-align: justify;
   }
 }

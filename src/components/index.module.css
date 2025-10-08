@@ -62,10 +62,41 @@
 }
 .team{
   margin-top: 10px;
+  margin-bottom: 15px;
   border-radius: 300px;
   width: 200px;
   height: 200px;
    box-shadow: 0 4px 28px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+form{
+
+}
+form,
+.contactform{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 320px;
+}
+input[type="text"],
+input[type="email"],
+button,
+textarea
+{
+    background-color: #fff;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 100%;
+    border-width: 1px;
+    padding: 5px;
+}
+button{
+  background-color: #ec7461;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  color: white;
+  padding: 10px;
 }
 
 /* Styles for mobile devices */

@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -18,6 +18,40 @@ import 'swiper/css/scrollbar';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { default as ReactMarkdown  } from 'react-markdown';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookSquare, faLinkedin, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
+import { faCoffee, faBars } from '@fortawesome/free-solid-svg-icons';
+import styled from 'styled-components';
+
+const IconContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+
+  @media (max-width: 768px) {
+    margin: 10px;
+  }
+`;
+
+const IconsWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+`;
+
+const Text = styled.p`
+  color: green;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 1em;
+  }
+`;
 
 const siteNavigationLinks = [
   {
@@ -34,12 +68,13 @@ const siteNavigationLinks = [
   }
 ]
 
+
 const Intro = [
   {
     text: "Intro",
     url: "d",
     description:
-      "Vision Cloud est une société d’intégration fondée par trois associés, spécialisée dans trois domaines complémentaires : l’informatique cloud, la sécurité électronique, et l’intelligence artificielle. Elle accompagne les entreprises dans la modernisation de leurs infrastructures, la sécurisation de leurs sites, et la valorisation des données en temps réel, grâce à des solutions simples à déployer et pilotables à distance",
+      `**Vision Cloud** est une société d’intégration fondée par trois associés, spécialisée dans trois domaines complémentaires : l’informatique cloud, la sécurité électronique, et l’intelligence artificielle. Elle accompagne les entreprises dans la modernisation de leurs infrastructures, la sécurisation de leurs sites, et la valorisation des données en temps réel, grâce à des solutions simples à déployer et pilotables à distance`,
   },
 ]
 
@@ -48,17 +83,18 @@ const carousselLinks = [
     url: "k",
     text: "Vidéosurveillance Cloud",
     description:
-      "Solution de sécurité de nouvelle génération repose sur une plateforme unifiée et hébergée dans le cloud. Elle intègre des caméras intelligentes, le contrôle d’accès, des capteurs et des systèmes d’alarme dans une interface unique, simple et intuitive. Grâce à l’intelligence artificielle embarquée, elle permet une recherche rapide d’événements, une analyse en temps réel et une gestion centralisée, quel que soit le nombre de sites. Conçue pour éliminer les serveurs et infrastructures complexes, elle offre une sécurité renforcée, des mises à jour automatiques et une évolutivité adaptée aussi bien aux petites entreprises qu’aux grandes organisations multisites.",
+      `Solution de sécurité de nouvelle génération repose sur une plateforme unifiée et hébergée dans le cloud.      
+      Elle intègre des caméras intelligentes, le contrôle d’accès, des capteurs et des systèmes d’alarme dans une interface unique, simple et intuitive. Grâce à l’intelligence artificielle embarquée, elle permet une recherche rapide d’événements, une analyse en temps réel et une gestion centralisée, quel que soit le nombre de sites. Conçue pour éliminer les serveurs et infrastructures complexes, elle offre une sécurité renforcée, des mises à jour automatiques et une évolutivité adaptée aussi bien aux petites entreprises qu’aux grandes organisations multisites.`,
   },
   { 
     text: "Réseaux Cloud",
     url: "using-typescript" ,
-    description: "Cette solution de connectivité propose un réseau entièrement managé dans le cloud, conçu pour remplacer la complexité des infrastructures traditionnelles. Elle offre un Wi-Fi fiable et sécurisé, une configuration centralisée et des mises à jour automatiques, sans nécessiter de matériel réseau lourd ni d’intervention technique complexe. L’architecture évolutive permet d’ajouter facilement de nouveaux sites ou utilisateurs, tout en garantissant une visibilité complète et en temps réel sur l’ensemble du réseau. Cette approche assure à la fois performance, sécurité et simplicité de gestion, adaptée aussi bien aux petites structures qu’aux grandes organisations multisites."
+    description: `Cette solution de connectivité propose un réseau entièrement managé dans le cloud, conçu pour remplacer la complexité des infrastructures traditionnelles. Elle offre un Wi-Fi fiable et sécurisé, une configuration centralisée et des mises à jour automatiques, sans nécessiter de matériel réseau lourd ni d’intervention technique complexe. L’architecture évolutive permet d’ajouter facilement de nouveaux sites ou utilisateurs, tout en garantissant une visibilité complète et en temps réel sur l’ensemble du réseau. Cette approche assure à la fois performance, sécurité et simplicité de gestion, adaptée aussi bien aux petites structures qu’aux grandes organisations multisites.`
   },
   { 
     text: "Solution AI",
     url: "using" ,
-    description: "Les solutions d’intelligence artificielle appliquées à la vision par ordinateur permettent d’analyser automatiquement les images et les vidéos afin de détecter, reconnaître ou classifier des objets, des personnes et des comportements. Ces technologies ouvrent la voie à de nombreux cas d’usage, tels que la détection d’intrusions, le comptage de personnes, l’analyse des flux de clients, la reconnaissance de plaques d’immatriculation ou encore l’identification d’anomalies en temps réel. En intégrant l’IA directement dans la gestion de la vidéosurveillance, elles offrent aux organisations des outils puissants pour améliorer la sécurité, optimiser les opérations et faciliter la prise de décision grâce à des données visuelles exploitables." 
+    description: `Les solutions d’intelligence artificielle appliquées à la vision par ordinateur permettent d’analyser automatiquement les images et les vidéos afin de détecter, reconnaître ou classifier des objets, des personnes et des comportements. Ces technologies ouvrent la voie à de nombreux cas d’usage, tels que la détection d’intrusions, le comptage de personnes, l’analyse des flux de clients, la reconnaissance de plaques d’immatriculation ou encore l’identification d’anomalies en temps réel. En intégrant l’IA directement dans la gestion de la vidéosurveillance, elles offrent aux organisations des outils puissants pour améliorer la sécurité, optimiser les opérations et faciliter la prise de décision grâce à des données visuelles exploitables.`
   },
   // { text: "Deferred Static Generation", url: "using-dsg" },
 ]
@@ -70,7 +106,7 @@ const teamLinks = [
     name: "Angélique Fischer",
     image_name: "../images/ang.jpeg",
     url: "https://www.linkedin.com/in/angelique-fischer-ll-b-m-a-7b537022/",
-    text: "Je suis une dirigeante passionnée par l’innovation et engagée dans la transformation digitale des entreprises. À travers mon rôle de CEO, je me spécialise dans la revente de solutions de vidéosurveillance cloud, de réseaux managés et d’intelligence artificielle. Mon objectif est d’accompagner chaque organisation dans la modernisation de son infrastructure, en proposant des solutions performantes, sécurisées et adaptées aux enjeux actuels et futurs, tout en plaçant la relation client au cœur de ma démarche."
+    text: `Je suis une dirigeante passionnée par l’innovation et engagée dans la transformation digitale des entreprises. À travers mon rôle de CEO, je me spécialise dans la revente de solutions de vidéosurveillance cloud, de réseaux managés et d’intelligence artificielle. Mon objectif est d’accompagner chaque organisation dans la modernisation de son infrastructure, en proposant des solutions performantes, sécurisées et adaptées aux enjeux actuels et futurs, tout en plaçant la relation client au cœur de ma démarche.`
   }
 ]
 
@@ -112,6 +148,7 @@ const minuteSeconds = 60;
 const hourSeconds = 3600;
 const daySeconds = 86400;
 const width = 500;
+const emailEndPoint="wilson.mintilana@googlemail.com";
 
 const timerProps = {
   isPlaying: true,
@@ -146,36 +183,15 @@ const endTime = stratTime + 643248; // use UNIX timestamp in seconds
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 54000
   };
 
-const IndexPage = () => (
-  <Layout>
-    {/* <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
-      </p>
-    </div> */}
+const IndexPage = () =>{
+  const [isVisible, setIsVisible] = React.useState(false);
 
+  return (
+  <Layout>
       <div className="navHeader">
         <StaticImage
         src="../images/logo_cota3.png"
@@ -186,13 +202,27 @@ const IndexPage = () => (
         alt=""
         style={{ marginBottom: `var(--space-3)` }}
       />
+      <div className="mobilenav--bars">
+        <a href="javascript:void(0);" class="icon" onclick={() => setIsVisible(!isVisible)}>
+          <FontAwesomeIcon icon={faBars} size="3x" style={{ color: '#ec7461' }} />
+        </a>
+        </div>
+      {/* <div class="topnav">
+        <a href="#home" class="active">Logo</a> */}
       </div>
+      {isVisible &&
+      <div className="mobilenav" id="myLinks">
+          <a href="#news">News</a>
+          <a href="#contact">Contact</a>
+          <a href="#about">About</a>
+        </div>
+      }
 
       <div className="main-hero">
         {Intro.map(link => (
               <div key={link.url} className={styles.intro}>
                 <div className={styles.description}>
-                  <div>{link.description}</div>
+                  <ReactMarkdown>{link.description}</ReactMarkdown>
                 </div>
               </div>
             ))}
@@ -202,10 +232,12 @@ const IndexPage = () => (
         <Slider {...settings}>
         {carousselLinks.map((link, i) => (
           <React.Fragment key={link.url}>
-            <div>
-              <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-              {i !== carousselLinks.length - 1 && <> · </>}
-              <div>{link.description}</div>
+            <div className="slide">
+              <div  className="slide-title">{link.text}</div>
+              {/* {i !== carousselLinks.length - 1 && <> · </>} */}
+              <div className="slide-text">
+                <ReactMarkdown>{link.description}</ReactMarkdown>
+              </div>
             </div>
           </React.Fragment>
         ))}
@@ -222,28 +254,52 @@ const IndexPage = () => (
             <div key={link.url} className="team-member">
               <div className="team-member-bio">
                 <div key="i" className="title">{link.position}</div>
-
+                <div className="picture">
                 <StaticImage key="iv" alt="image of founder"  src="../images/ang.jpeg" class={styles.team} />
+                </div>
               </div>
               <div className="team-member-bio">
                 <div key="ii"  className="sub-title">{link.name}</div>
                 <div className="team_description">
-                  <div>{link.text}</div>
-                </div>
-                <a  key="v"  href={link.url} className="team-link">linkedin</a>
+                  <ReactMarkdown>{link.text}</ReactMarkdown>
+                  <a  key="v"  href={link.url} className="team-link">
+                <FontAwesomeIcon icon={faLinkedin} size="2x" style={{ color: '#0e76a8' }} /> </a>
+                </div>                
               </div>
             </div>
           ))}
     </div>
     <div className="studies">
       {marketStudies.map(link => (
-            <div key={link.url}>{link.text}</div>
+            <ReactMarkdown key={link.url}>{link.text}</ReactMarkdown>
           ))}
+    </div>
+
+    <div className="form">
+      <div className="title">Contact</div>
+      <form action="https://getform.io/f/amdyxnpb"
+        method="POST"
+        enctype="multipart/form-data"
+        id="form" className="contactform">
+        <input type="hidden" name="_gotcha"/>  
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter email"
+          required
+        ></input>
+        <textarea
+          placeholder="Enter message"
+          name="message"
+          rows="5"
+          required
+        ></textarea>
+        <button type="submit">Send</button>
+      </form>
     </div>
   </Layout>
 )
-
-
+}
 
 /**
  * Head export to define metadata for the page
