@@ -280,7 +280,7 @@ const IndexPage = () =>{
       <form action="https://getform.io/f/amdyxnpb"
         method="POST"
         enctype="multipart/form-data"
-        id="form" className="contactform">
+        id="form" class="contactform">
         <input type="hidden" name="_gotcha"/>  
         <input
           type="email"

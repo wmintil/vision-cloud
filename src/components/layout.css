@@ -321,7 +321,6 @@ pre tt:after {
   padding: 10px 0 0 30px;
   margin: 10px;
   text-align: justify;
-  /* overflow-y: scroll; */
 }
 .slick-dots li{
   margin-right: 15px !important;
@@ -344,6 +343,7 @@ li.slick-active > button{
   background-position: center right; 
   background-repeat:   no-repeat; */
   /* opacity: 0.6; */
+  margin-bottom: 20px;
 }
 
 .mobilenav--bars,
@@ -405,9 +405,20 @@ footer,
       padding-left: 40% !important;
       margin-bottom: 10px;
   }
-  form{
-  margin-left: 10%;
+  .contactform{
+    align-self:  center;
+    margin-right: 20px !important;
   }
+/* footer,
+.footer{
+  background-color: #000;
+  color: white;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-around ;
+} */
   .studies,
   .mission{
     padding: 0 20px;
