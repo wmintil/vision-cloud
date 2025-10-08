@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -20,8 +20,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { default as ReactMarkdown  } from 'react-markdown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookSquare, faLinkedin, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
-import { faCoffee, faBars } from '@fortawesome/free-solid-svg-icons';
+import {  faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import {  faBars } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 
 const IconContainer = styled.div`
@@ -82,6 +82,7 @@ const carousselLinks = [
   {
     url: "k",
     text: "Vidéosurveillance Cloud",
+    image_name: "../images/surv1.jpg",
     description:
       `Solution de sécurité de nouvelle génération repose sur une plateforme unifiée et hébergée dans le cloud.      
       Elle intègre des caméras intelligentes, le contrôle d’accès, des capteurs et des systèmes d’alarme dans une interface unique, simple et intuitive. Grâce à l’intelligence artificielle embarquée, elle permet une recherche rapide d’événements, une analyse en temps réel et une gestion centralisée, quel que soit le nombre de sites. Conçue pour éliminer les serveurs et infrastructures complexes, elle offre une sécurité renforcée, des mises à jour automatiques et une évolutivité adaptée aussi bien aux petites entreprises qu’aux grandes organisations multisites.`,
@@ -89,11 +90,13 @@ const carousselLinks = [
   { 
     text: "Réseaux Cloud",
     url: "using-typescript" ,
+    image_name: "../images/cloud1.jpg",
     description: `Cette solution de connectivité propose un réseau entièrement managé dans le cloud, conçu pour remplacer la complexité des infrastructures traditionnelles. Elle offre un Wi-Fi fiable et sécurisé, une configuration centralisée et des mises à jour automatiques, sans nécessiter de matériel réseau lourd ni d’intervention technique complexe. L’architecture évolutive permet d’ajouter facilement de nouveaux sites ou utilisateurs, tout en garantissant une visibilité complète et en temps réel sur l’ensemble du réseau. Cette approche assure à la fois performance, sécurité et simplicité de gestion, adaptée aussi bien aux petites structures qu’aux grandes organisations multisites.`
   },
   { 
     text: "Solution AI",
     url: "using" ,
+    image_name: "../images/ai2.jpg",
     description: `Les solutions d’intelligence artificielle appliquées à la vision par ordinateur permettent d’analyser automatiquement les images et les vidéos afin de détecter, reconnaître ou classifier des objets, des personnes et des comportements. Ces technologies ouvrent la voie à de nombreux cas d’usage, tels que la détection d’intrusions, le comptage de personnes, l’analyse des flux de clients, la reconnaissance de plaques d’immatriculation ou encore l’identification d’anomalies en temps réel. En intégrant l’IA directement dans la gestion de la vidéosurveillance, elles offrent aux organisations des outils puissants pour améliorer la sécurité, optimiser les opérations et faciliter la prise de décision grâce à des données visuelles exploitables.`
   },
   // { text: "Deferred Static Generation", url: "using-dsg" },
@@ -148,7 +151,7 @@ const minuteSeconds = 60;
 const hourSeconds = 3600;
 const daySeconds = 86400;
 const width = 500;
-const emailEndPoint="wilson.mintilana@googlemail.com";
+
 
 const timerProps = {
   isPlaying: true,
@@ -233,8 +236,16 @@ const IndexPage = () =>{
           <React.Fragment key={link.url}>
             <div className="slide">
               <div  className="slide-title">{link.text}</div>
-              {/* {i !== carousselLinks.length - 1 && <> · </>} */}
-              <div className="slide-text">
+              {/* {i !== carousselLinks.length - 1 && <> · </>} 
+              key={`c${i}`} src={link.image_name} className="slide-img" 
+              */}
+              {i ==0 &&
+              <StaticImage alt="image of slide" src="../images/surv1.jpg" class="slide-img" />}
+              {i ==1 &&
+              <StaticImage alt="image of slide" src="../images/cloud1.jpg" class="slide-img" />}
+              {i ==2 &&
+              <StaticImage alt="image of slide" src="../images/ai2.jpg" class="slide-img" />}
+              <div className={`slide-text slide-text__${i}`}>
                 <ReactMarkdown>{link.description}</ReactMarkdown>
               </div>
             </div>
@@ -248,6 +259,7 @@ const IndexPage = () =>{
             <div>{link.text}</div>
           ))}
     </div>
+
     <div className="team">
       {teamLinks.map(link => (
             <div key={link.url} className="team-member">
@@ -262,16 +274,18 @@ const IndexPage = () =>{
                 <div className="team_description">
                   <ReactMarkdown>{link.text}</ReactMarkdown>
                   <a  key="v"  href={link.url} className="team-link">
-                <FontAwesomeIcon icon={faLinkedin} size="2x" style={{ color: '#0e76a8' }} /> </a>
+                <FontAwesomeIcon className="team-icon" icon={faLinkedin} size="2x" style={{ color: '#0e76a8' }} /> </a>
                 </div>                
               </div>
             </div>
           ))}
     </div>
     <div className="studies">
+      <div key="02" className="title">Studies</div>
       {marketStudies.map(link => (
             <ReactMarkdown key={link.url}>{link.text}</ReactMarkdown>
           ))}
+      <StaticImage alt="image of study" src="../images/cloud_sec3.jpg" class="study-img" />
     </div>
 
   <div className="footer">

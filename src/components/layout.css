@@ -269,18 +269,26 @@ pre tt:after {
   margin: 20px;
   padding: 30px;
 }
+.studies,
+.mission{
+  text-align: justify;
+}
 .team,
-.mission,
 .studies{
-  margin: 15px 0;
+  margin: 15px 0 20px 0px;
 }
 .navHeader{
   background-color: #fff3d9;
   padding-top: 10px;
   padding-left: 10px;
-      display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.team{
+  border-bottom: 1px solid #ec7461 !important;
+  margin-bottom: 30px;
 }
 
 .team-member{
@@ -294,6 +302,9 @@ pre tt:after {
   display:  flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+.team-icon{
+  border-radius: 50px;
 }
 .title{
   font-weight:bold;
@@ -322,6 +333,16 @@ pre tt:after {
   margin: 10px;
   text-align: justify;
 }
+.team_description > p{
+  padding-bottom: 0px !important;
+}
+.studies > p,
+.mission > p{
+  clear: both;
+  width: 90% !important;
+  max-width: 90% !important;
+    padding-left: 30px;
+}
 .slick-dots li{
   margin-right: 15px !important;
 }
@@ -338,14 +359,14 @@ li.slick-active > button{
   color: #ec7461 !important;
 }
 .studies{
-  /* background-image: url('../images/meeting.jpg');
-  background-size: contain; 
-  background-position: center right; 
-  background-repeat:   no-repeat; */
-  /* opacity: 0.6; */
-  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
-
+.mission{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 0 20px;
+}
 .mobilenav--bars,
 .mobilenav{
   display: none;
@@ -361,6 +382,29 @@ footer,
   justify-items: center;
   justify-content: space-around;
 }
+.slide-text__0,
+.slide-text__1,
+.slide-text__2 {
+  background-size: contain; 
+  background-position: center center; 
+  background-repeat:   no-repeat;
+  border-radius: 300px;
+}
+.slide-img{
+  width: 60px !important;
+  height: 60px !important;
+  align-self: flex-end;
+}
+
+/* .slide-text__0 {
+  background-image: url('../images/surv1.jpg');
+}
+.slide-text__1 {
+  background-image: url('../images/cloud1.jpg');
+}
+.slide-text__2 {
+  background-image: url('../images/ai.jpg');
+} */
 
 /* Styles for mobile devices */
 @media (max-width: 576px) {
