@@ -263,7 +263,11 @@ pre tt:after {
 }
 .hero-img{
   opacity: 60%;
-  border-radius: 10%
+  border-radius: 10%;
+  height: 200px;
+}
+.study-img{
+
 }
 .carousel{
   margin: 20px;

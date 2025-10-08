@@ -255,6 +255,7 @@ const IndexPage = () =>{
     </div>
 
     <div className="mission">
+      <div key="k2" className="title">Mission</div>
       {misiinDetail.map(link => (
             <div>{link.text}</div>
           ))}
