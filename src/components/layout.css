@@ -323,6 +323,9 @@ pre tt:after {
   text-align: justify;
   /* overflow-y: scroll; */
 }
+.slick-dots li{
+  margin-right: 15px !important;
+}
 .slick-dots li button::before {
   font-size: 25px !important;
   line-height: 30px;
